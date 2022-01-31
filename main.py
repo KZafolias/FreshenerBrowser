@@ -1,5 +1,8 @@
 import sys
+
+import app as app
 from PyQt5.QtCore import *
+from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import *
 from PyQt5.QtWebEngineWidgets import *
 
@@ -48,6 +51,11 @@ class MainWindow(QMainWindow):
 
     def update_url(self, q):
         self.url_bar.setText(q.toString())
+        
+    def initUI(self):
+        self.setGeometry(300, 300, 300, 220)
+        self.setWindowTitle('Icon')
+        self.setWindowIcon(QIcon('icon.png'))
 
 app = QApplication(sys.argv)
 QApplication.setApplicationName("Cerberus Browser")
